@@ -3,9 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EverWard — Vigilancia de sentimiento para tu negocio</title>
+<title data-i18n="pageTitle">EverWard Data — Vigilancia de sentimiento para tu negocio</title>
+<meta name="description" content="EverWard Data vigila las reseñas y comentarios de tu tienda online todos los días, detecta cuando el sentimiento de tus clientes cambia y te avisa antes de que afecte tus ventas. Para vendedores de Shopify, Mercado Libre y Amazon.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://everward.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EverWard Data — Vigilancia de sentimiento para tu negocio">
+<meta property="og:description" content="Detecta cuando el sentimiento de tus clientes cambia y recibe alertas antes de que afecte tus ventas. Para vendedores de Shopify, Mercado Libre y Amazon.">
+<meta property="og:url" content="https://everward.netlify.app/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EverWard Data — Vigilancia de sentimiento para tu negocio">
+<meta name="twitter:description" content="Detecta cuando el sentimiento de tus clientes cambia y recibe alertas antes de que afecte tus ventas.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EverWard Data",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "EverWard Data monitorea reseñas y comentarios de e-commerce, detecta cambios de sentimiento y alerta a dueños de tiendas online antes de que un problema afecte sus ventas.",
+  "url": "https://everward.netlify.app/"
+}
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   --bg:#F8FAFC;
@@ -38,9 +59,9 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,h4{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Archivo',sans-serif;
   margin:0;
-  letter-spacing:-0.01em;
+  letter-spacing:-0.015em;
   color:var(--ink);
 }
 p{margin:0;}
@@ -90,8 +111,9 @@ img,svg{display:block;}
 .btn-block{width:100%;}
 
 /* ---------- Logo mark ---------- */
-.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy);}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy);}
 .logo svg{width:30px;height:30px;flex-shrink:0;}
+.accent-stroke{stroke:var(--teal);}
 
 /* ---------- Nav ---------- */
 .nav{
@@ -110,7 +132,30 @@ img,svg{display:block;}
   transition:color .15s ease;
 }
 .nav-links a:hover{color:var(--navy);}
-.nav-cta{display:flex;align-items:center;}
+.nav-cta{display:flex;align-items:center;gap:14px;}
+.lang-toggle{
+  display:flex;
+  border:1px solid var(--line);
+  border-radius:100px;
+  padding:3px;
+  gap:2px;
+  background:var(--surface);
+}
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:'Inter',sans-serif;
+  font-size:0.78rem;
+  font-weight:700;
+  padding:5px 11px;
+  border-radius:100px;
+  color:var(--muted);
+  transition:background .15s ease,color .15s ease;
+}
+.lang-btn.active{background:var(--navy);color:#fff;}
+@media (max-width:480px){
+  .lang-toggle{display:none;}
+}
 @media (max-width:760px){
   .nav-links{display:none;}
 }
@@ -127,10 +172,10 @@ img,svg{display:block;}
   display:inline-flex;
   align-items:center;
   gap:8px;
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Inter',sans-serif;
   font-size:0.78rem;
-  font-weight:500;
-  letter-spacing:0.04em;
+  font-weight:700;
+  letter-spacing:0.03em;
   text-transform:uppercase;
   color:var(--teal-deep);
   background:var(--teal-soft);
@@ -175,16 +220,18 @@ img,svg{display:block;}
   margin-bottom:14px;
 }
 .monitor-title{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Inter',sans-serif;
+  font-weight:600;
   font-size:0.78rem;
   color:var(--muted);
   letter-spacing:0.01em;
 }
 .live-badge{
   display:flex;align-items:center;gap:6px;
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Inter',sans-serif;
   font-size:0.72rem;
-  font-weight:500;
+  font-weight:700;
+  letter-spacing:0.02em;
   color:var(--teal-deep);
 }
 .live-dot{
@@ -226,7 +273,7 @@ img,svg{display:block;}
   margin-bottom:2px;
 }
 .alert-badge .sub-line{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Inter',sans-serif;
   font-size:0.7rem;color:var(--muted);
 }
 .feed-list{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;}
@@ -242,9 +289,10 @@ img,svg{display:block;}
 .feed-item:nth-child(3){animation-delay:2.6s;}
 .tag{
   flex-shrink:0;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;
-  font-weight:600;
+  font-family:'Inter',sans-serif;
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.02em;
   padding:3px 7px;
   border-radius:5px;
   margin-top:1px;
@@ -304,8 +352,9 @@ img,svg{display:block;}
   padding:28px 26px;
 }
 .problem-card .num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.78rem;
+  font-family:'Archivo',sans-serif;
+  font-weight:700;
+  font-size:0.85rem;
   color:var(--muted-light);
   margin-bottom:14px;
   display:block;
@@ -332,8 +381,8 @@ img,svg{display:block;}
   border-radius:50%;
   background:var(--navy);
   color:#fff;
-  font-family:'Space Grotesk',sans-serif;
-  font-weight:600;
+  font-family:'Archivo',sans-serif;
+  font-weight:700;
   display:flex;align-items:center;justify-content:center;
   margin-bottom:18px;
   font-size:1.05rem;
@@ -445,6 +494,8 @@ img,svg{display:block;}
   display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
 }
 .footer-tag{font-size:0.85rem;color:var(--muted-light);}
+.footer-help{font-size:0.85rem;color:var(--teal-deep);font-weight:600;transition:color .15s ease;}
+.footer-help:hover{color:var(--navy);}
 .footer-right{font-size:0.82rem;color:var(--muted-light);}
 
 /* ---------- Reveal on scroll ---------- */
@@ -462,17 +513,21 @@ img,svg{display:block;}
     <div class="logo">
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M16 3 L27 7 V15 C27 22 22 27 16 29 C10 27 5 22 5 15 V7 Z"/>
-        <path d="M9 17 L12 17 L14 12 L17 21 L19 14 L21 17 L23 17" stroke="var(--teal)"/>
+        <path d="M9 17 L12 17 L14 12 L17 21 L19 14 L21 17 L23 17" class="accent-stroke"/>
       </svg>
-      EverWard
+      EverWard Data
     </div>
     <div class="nav-links">
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#para-quien">Para quién es</a>
-      <a href="#acceso">Acceso anticipado</a>
+      <a href="#como-funciona" data-i18n="navHow">Cómo funciona</a>
+      <a href="#para-quien" data-i18n="navWho">Para quién es</a>
+      <a href="#acceso" data-i18n="navAccess">Acceso anticipado</a>
     </div>
     <div class="nav-cta">
-      <a href="#cta-final" class="btn btn-primary">Solicitar acceso</a>
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="es" type="button">ES</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <a href="#cta-final" class="btn btn-primary" data-i18n="navCta">Solicitar acceso</a>
     </div>
   </div>
 </nav>
@@ -480,23 +535,23 @@ img,svg{display:block;}
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Para tiendas online y negocios digitales</span>
-      <h1>Te avisamos cuando algo empieza a fallar con tus clientes — antes de que tú lo notes.</h1>
-      <p class="lead">EverWard lee tus reseñas y comentarios todos los días, detecta cuando el sentimiento cambia, y te dice exactamente qué está pasando y por qué.</p>
+      <span class="eyebrow" data-i18n="heroEyebrow">Para tiendas online y negocios digitales</span>
+      <h1 data-i18n="heroH1">Te avisamos cuando algo empieza a fallar con tus clientes — antes de que tú lo notes.</h1>
+      <p class="lead" data-i18n="heroLead">EverWard lee tus reseñas y comentarios todos los días, detecta cuando el sentimiento cambia, y te dice exactamente qué está pasando y por qué.</p>
       <div class="hero-ctas">
-        <a href="#cta-final" class="btn btn-primary">Solicitar acceso anticipado</a>
-        <a href="#como-funciona" class="btn btn-ghost">Ver cómo funciona</a>
+        <a href="#cta-final" class="btn btn-primary" data-i18n="heroCtaPrimary">Solicitar acceso anticipado</a>
+        <a href="#como-funciona" class="btn btn-ghost" data-i18n="heroCtaSecondary">Ver cómo funciona</a>
       </div>
       <div class="trust-line">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        Construido para vendedores de Shopify, Mercado Libre y Amazon
+        <span data-i18n="heroTrust">Construido para vendedores de Shopify, Mercado Libre y Amazon</span>
       </div>
     </div>
 
     <div class="monitor-card">
       <div class="monitor-head">
-        <span class="monitor-title">Sentimiento de clientes · 14 días</span>
-        <span class="live-badge"><span class="live-dot"></span>EN VIVO</span>
+        <span class="monitor-title" data-i18n="monitorTitle">Sentimiento de clientes · 14 días</span>
+        <span class="live-badge"><span class="live-dot"></span><span data-i18n="liveBadge">EN VIVO</span></span>
       </div>
       <div class="chart-zone">
         <svg class="chart-svg" viewBox="0 0 480 190" preserveAspectRatio="none">
@@ -515,15 +570,15 @@ img,svg{display:block;}
         <div class="alert-badge" style="top:56%; left:54%;">
           <div class="top-line">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.3 3.9 2 18a1.8 1.8 0 0 0 1.5 2.7h17a1.8 1.8 0 0 0 1.5-2.7L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/></svg>
-            Sentimiento bajó 32%
+            <span data-i18n="alertTop">Sentimiento bajó 32%</span>
           </div>
-          <div class="sub-line">Tema: tiempos de envío</div>
+          <div class="sub-line" data-i18n="alertSub">Tema: tiempos de envío</div>
         </div>
       </div>
       <div class="feed-list">
-        <div class="feed-item"><span class="tag tag-pos">POSITIVO</span><span class="feed-text">"Llegó rapidísimo, todo perfecto 📦"</span></div>
-        <div class="feed-item"><span class="tag tag-neg">NEGATIVO</span><span class="feed-text">"Ya es la segunda vez que tarda más de lo prometido"</span></div>
-        <div class="feed-item"><span class="tag tag-neg">NEGATIVO</span><span class="feed-text">"Buena calidad pero el empaque venía dañado"</span></div>
+        <div class="feed-item"><span class="tag tag-pos" data-i18n="feedTag1">POSITIVO</span><span class="feed-text" data-i18n="feedText1">"Llegó rapidísimo, todo perfecto 📦"</span></div>
+        <div class="feed-item"><span class="tag tag-neg" data-i18n="feedTag2">NEGATIVO</span><span class="feed-text" data-i18n="feedText2">"Ya es la segunda vez que tarda más de lo prometido"</span></div>
+        <div class="feed-item"><span class="tag tag-neg" data-i18n="feedTag2">NEGATIVO</span><span class="feed-text" data-i18n="feedText3">"Buena calidad pero el empaque venía dañado"</span></div>
       </div>
     </div>
   </div>
@@ -532,25 +587,25 @@ img,svg{display:block;}
 <section class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">El problema</span>
-      <h2>Hoy, te enteras cuando ya es tarde</h2>
-      <p>Entre vender, surtir pedidos y contestar mensajes, no queda tiempo para leer cada reseña a fondo. Y los problemas no esperan.</p>
+      <span class="eyebrow" data-i18n="problemEyebrow">El problema</span>
+      <h2 data-i18n="problemH2">Hoy, te enteras cuando ya es tarde</h2>
+      <p data-i18n="problemP">Entre vender, surtir pedidos y contestar mensajes, no queda tiempo para leer cada reseña a fondo. Y los problemas no esperan.</p>
     </div>
     <div class="card-grid">
       <div class="problem-card reveal">
         <span class="num">01</span>
-        <h3>Revisas todo a mano</h3>
-        <p>Sentarte a leer reseña por reseña, comentario por comentario, simplemente no es realista con todo lo demás que tienes que hacer.</p>
+        <h3 data-i18n="problem1H3">Revisas todo a mano</h3>
+        <p data-i18n="problem1P">Sentarte a leer reseña por reseña, comentario por comentario, simplemente no es realista con todo lo demás que tienes que hacer.</p>
       </div>
       <div class="problem-card reveal">
         <span class="num">02</span>
-        <h3>El problema crece en silencio</h3>
-        <p>Para cuando notas la caída en ventas o las quejas repetidas, ya afectó a decenas de clientes — y a tu reputación.</p>
+        <h3 data-i18n="problem2H3">El problema crece en silencio</h3>
+        <p data-i18n="problem2P">Para cuando notas la caída en ventas o las quejas repetidas, ya afectó a decenas de clientes — y a tu reputación.</p>
       </div>
       <div class="problem-card reveal">
         <span class="num">03</span>
-        <h3>Todo está disperso</h3>
-        <p>Reseñas en tu tienda, comentarios en redes, calificaciones en marketplaces — sin una vista clara de qué está fallando de verdad.</p>
+        <h3 data-i18n="problem3H3">Todo está disperso</h3>
+        <p data-i18n="problem3P">Reseñas en tu tienda, comentarios en redes, calificaciones en marketplaces — sin una vista clara de qué está fallando de verdad.</p>
       </div>
     </div>
   </div>
@@ -559,25 +614,25 @@ img,svg{display:block;}
 <section class="section section-alt" id="como-funciona">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>De reseña a alerta, en tres pasos</h2>
-      <p>Sin desarrolladores, sin configuraciones complicadas. Conectas tus canales una vez y EverWard se queda vigilando.</p>
+      <span class="eyebrow" data-i18n="howEyebrow">Cómo funciona</span>
+      <h2 data-i18n="howH2">De reseña a alerta, en tres pasos</h2>
+      <p data-i18n="howP">Sin desarrolladores, sin configuraciones complicadas. Conectas tus canales una vez y EverWard se queda vigilando.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <h3>Conecta tus canales</h3>
-        <p>Shopify, Mercado Libre, Amazon o tus redes sociales. Toma minutos, no necesitas programar nada.</p>
+        <h3 data-i18n="step1H3">Conecta tus canales</h3>
+        <p data-i18n="step1P">Shopify, Mercado Libre, Amazon o tus redes sociales. Toma minutos, no necesitas programar nada.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">2</div>
-        <h3>EverWard analiza cada comentario</h3>
-        <p>Clasifica el sentimiento, identifica el tema — envío, calidad, precio, servicio — y lo guarda organizado.</p>
+        <h3 data-i18n="step2H3">EverWard analiza cada comentario</h3>
+        <p data-i18n="step2P">Clasifica el sentimiento, identifica el tema — envío, calidad, precio, servicio — y lo guarda organizado.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">3</div>
-        <h3>Te llega la alerta a tiempo</h3>
-        <p>Cuando algo cambia de forma importante, recibes un aviso claro: qué pasó, dónde, y por qué te debería importar.</p>
+        <h3 data-i18n="step3H3">Te llega la alerta a tiempo</h3>
+        <p data-i18n="step3P">Cuando algo cambia de forma importante, recibes un aviso claro: qué pasó, dónde, y por qué te debería importar.</p>
       </div>
     </div>
   </div>
@@ -586,25 +641,25 @@ img,svg{display:block;}
 <section class="section" id="para-quien">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">¿Es para tu negocio?</span>
-      <h2>EverWard es para ti si...</h2>
+      <span class="eyebrow" data-i18n="whoEyebrow">¿Es para tu negocio?</span>
+      <h2 data-i18n="whoH2">EverWard es para ti si...</h2>
     </div>
     <div class="audience-grid">
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        Vendes en Shopify, Mercado Libre o Amazon
+        <span data-i18n="check1">Vendes en Shopify, Mercado Libre o Amazon</span>
       </div>
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        Recibes reseñas o comentarios todos los días
+        <span data-i18n="check2">Recibes reseñas o comentarios todos los días</span>
       </div>
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        No tienes tiempo — ni equipo — para revisarlos uno por uno
+        <span data-i18n="check3">No tienes tiempo — ni equipo — para revisarlos uno por uno</span>
       </div>
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        Prefieres anticiparte a un problema, no reaccionar cuando ya es grande
+        <span data-i18n="check4">Prefieres anticiparte a un problema, no reaccionar cuando ya es grande</span>
       </div>
     </div>
   </div>
@@ -614,21 +669,21 @@ img,svg{display:block;}
   <div class="wrap">
     <div class="early-access reveal">
       <div>
-        <h2>Estamos construyendo esto junto con los primeros negocios que se suban</h2>
-        <p>EverWard está en una etapa temprana. Eso significa acceso prioritario, un precio especial de fundador, y que tu opinión va a definir qué alertas se construyen primero.</p>
+        <h2 data-i18n="earlyH2">Estamos construyendo esto junto con los primeros negocios que se sumen</h2>
+        <p data-i18n="earlyP">EverWard está en una etapa temprana. Eso significa acceso prioritario, un precio especial de fundador, y que tu opinión va a definir qué alertas se construyen primero.</p>
       </div>
       <div class="early-list">
         <div class="item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <div class="item-text"><strong>Acceso prioritario</strong><span>Entras antes que el resto, sin filas de espera.</span></div>
+          <div class="item-text"><strong data-i18n="early1Strong">Acceso prioritario</strong><span data-i18n="early1Span">Entras antes que el resto, sin filas de espera.</span></div>
         </div>
         <div class="item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <div class="item-text"><strong>Precio de fundador</strong><span>Una tarifa especial que se mantiene mientras sigas con nosotros.</span></div>
+          <div class="item-text"><strong data-i18n="early2Strong">Precio de fundador</strong><span data-i18n="early2Span">Una tarifa especial que se mantiene mientras sigas con nosotros.</span></div>
         </div>
         <div class="item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <div class="item-text"><strong>Te escuchamos en serio</strong><span>Hablamos directo contigo para construir lo que tu negocio realmente necesita.</span></div>
+          <div class="item-text"><strong data-i18n="early3Strong">Te escuchamos en serio</strong><span data-i18n="early3Span">Hablamos directo contigo para construir lo que tu negocio realmente necesita.</span></div>
         </div>
       </div>
     </div>
@@ -639,48 +694,48 @@ img,svg{display:block;}
   <div class="wrap">
     <div class="final-grid">
       <div class="final-copy reveal">
-        <span class="eyebrow">Acceso anticipado</span>
-        <h2>Sé de los primeros en probarlo</h2>
-        <p>Cuéntanos de tu negocio y te contactamos directamente para coordinar tu acceso.</p>
+        <span class="eyebrow" data-i18n="ctaEyebrow">Acceso anticipado</span>
+        <h2 data-i18n="ctaH2">Sé de los primeros en probarlo</h2>
+        <p data-i18n="ctaP">Cuéntanos de tu negocio y te contactamos directamente para coordinar tu acceso.</p>
         <div class="whatsapp-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.32-.18-3 .79.8-2.92-.2-.3A7.93 7.93 0 0 1 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8Z"/></svg>
-          ¿Prefieres hablar ya? <a href="https://wa.me/521000000000" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Escríbenos por WhatsApp</a>
+          <span data-i18n="whatsappNote" data-i18n-html>¿Prefieres hablar ya? <a href="https://wa.me/525658479535" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Escríbenos por WhatsApp</a></span>
         </div>
       </div>
 
       <div class="form-card reveal" id="formCard">
         <form id="leadForm">
           <div class="field">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" required placeholder="Tu nombre">
+            <label for="nombre" data-i18n="labelNombre">Nombre</label>
+            <input type="text" id="nombre" required placeholder="Tu nombre" data-i18n-placeholder="placeholderNombre">
           </div>
           <div class="field">
-            <label for="negocio">Negocio o tienda</label>
-            <input type="text" id="negocio" required placeholder="Nombre de tu tienda o link">
+            <label for="negocio" data-i18n="labelNegocio">Negocio o tienda</label>
+            <input type="text" id="negocio" required placeholder="Nombre de tu tienda o link" data-i18n-placeholder="placeholderNegocio">
           </div>
           <div class="field-row">
             <div class="field">
-              <label for="plataforma">Dónde vendes</label>
+              <label for="plataforma" data-i18n="labelPlataforma">Dónde vendes</label>
               <select id="plataforma" required>
-                <option value="">Selecciona</option>
+                <option value="" data-i18n="optSelecciona">Selecciona</option>
                 <option>Shopify</option>
                 <option>Mercado Libre</option>
                 <option>Amazon</option>
-                <option>Redes sociales</option>
-                <option>Otro</option>
+                <option data-i18n="optRedes">Redes sociales</option>
+                <option data-i18n="optOtro">Otro</option>
               </select>
             </div>
             <div class="field">
-              <label for="contacto">Email o WhatsApp</label>
+              <label for="contacto" data-i18n="labelContacto">Email o WhatsApp</label>
               <input type="text" id="contacto" required placeholder="tu@email.com">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Quiero acceso anticipado</button>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="submitBtn">Quiero acceso anticipado</button>
         </form>
         <div class="success-panel" id="successPanel">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <h3>¡Recibido!</h3>
-          <p>Te contactamos en menos de 48 horas para coordinar tu acceso anticipado.</p>
+          <h3 data-i18n="successH3">¡Recibido!</h3>
+          <p data-i18n="successP">Te contactamos en menos de 48 horas para coordinar tu acceso anticipado.</p>
         </div>
       </div>
     </div>
@@ -692,11 +747,12 @@ img,svg{display:block;}
     <div class="logo" style="font-size:1rem;">
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
         <path d="M16 3 L27 7 V15 C27 22 22 27 16 29 C10 27 5 22 5 15 V7 Z"/>
-        <path d="M9 17 L12 17 L14 12 L17 21 L19 14 L21 17 L23 17" stroke="var(--teal)"/>
+        <path d="M9 17 L12 17 L14 12 L17 21 L19 14 L21 17 L23 17" class="accent-stroke"/>
       </svg>
-      EverWard
+      EverWard Data
     </div>
-    <span class="footer-tag">Vigilancia de sentimiento para negocios digitales.</span>
+    <span class="footer-tag" data-i18n="footerTag">Vigilancia de sentimiento para negocios digitales.</span>
+    <a href="mailto:dataeverward@gmail.com" class="footer-help" data-i18n="footerHelp" data-i18n-html>¿Necesitas ayuda? dataeverward@gmail.com</a>
     <span class="footer-right">© 2026 EverWard</span>
   </div>
 </footer>
@@ -723,6 +779,132 @@ leadForm.addEventListener('submit', function(e){
   formCard.classList.add('is-success');
   successPanel.classList.add('show');
 });
+
+// ---------- Traducción ES / EN ----------
+const translations = {
+  es: {
+    pageTitle: "EverWard Data — Vigilancia de sentimiento para tu negocio",
+    navHow: "Cómo funciona", navWho: "Para quién es", navAccess: "Acceso anticipado", navCta: "Solicitar acceso",
+    heroEyebrow: "Para tiendas online y negocios digitales",
+    heroH1: "Te avisamos cuando algo empieza a fallar con tus clientes — antes de que tú lo notes.",
+    heroLead: "EverWard lee tus reseñas y comentarios todos los días, detecta cuando el sentimiento cambia, y te dice exactamente qué está pasando y por qué.",
+    heroCtaPrimary: "Solicitar acceso anticipado", heroCtaSecondary: "Ver cómo funciona",
+    heroTrust: "Construido para vendedores de Shopify, Mercado Libre y Amazon",
+    monitorTitle: "Sentimiento de clientes · 14 días", liveBadge: "EN VIVO",
+    alertTop: "Sentimiento bajó 32%", alertSub: "Tema: tiempos de envío",
+    feedTag1: "POSITIVO", feedText1: "\"Llegó rapidísimo, todo perfecto 📦\"",
+    feedTag2: "NEGATIVO", feedText2: "\"Ya es la segunda vez que tarda más de lo prometido\"",
+    feedText3: "\"Buena calidad pero el empaque venía dañado\"",
+    problemEyebrow: "El problema", problemH2: "Hoy, te enteras cuando ya es tarde",
+    problemP: "Entre vender, surtir pedidos y contestar mensajes, no queda tiempo para leer cada reseña a fondo. Y los problemas no esperan.",
+    problem1H3: "Revisas todo a mano", problem1P: "Sentarte a leer reseña por reseña, comentario por comentario, simplemente no es realista con todo lo demás que tienes que hacer.",
+    problem2H3: "El problema crece en silencio", problem2P: "Para cuando notas la caída en ventas o las quejas repetidas, ya afectó a decenas de clientes — y a tu reputación.",
+    problem3H3: "Todo está disperso", problem3P: "Reseñas en tu tienda, comentarios en redes, calificaciones en marketplaces — sin una vista clara de qué está fallando de verdad.",
+    howEyebrow: "Cómo funciona", howH2: "De reseña a alerta, en tres pasos",
+    howP: "Sin desarrolladores, sin configuraciones complicadas. Conectas tus canales una vez y EverWard se queda vigilando.",
+    step1H3: "Conecta tus canales", step1P: "Shopify, Mercado Libre, Amazon o tus redes sociales. Toma minutos, no necesitas programar nada.",
+    step2H3: "EverWard analiza cada comentario", step2P: "Clasifica el sentimiento, identifica el tema — envío, calidad, precio, servicio — y lo guarda organizado.",
+    step3H3: "Te llega la alerta a tiempo", step3P: "Cuando algo cambia de forma importante, recibes un aviso claro: qué pasó, dónde, y por qué te debería importar.",
+    whoEyebrow: "¿Es para tu negocio?", whoH2: "EverWard es para ti si...",
+    check1: "Vendes en Shopify, Mercado Libre o Amazon", check2: "Recibes reseñas o comentarios todos los días",
+    check3: "No tienes tiempo — ni equipo — para revisarlos uno por uno", check4: "Prefieres anticiparte a un problema, no reaccionar cuando ya es grande",
+    earlyH2: "Estamos construyendo esto junto con los primeros negocios que se sumen",
+    earlyP: "EverWard está en una etapa temprana. Eso significa acceso prioritario, un precio especial de fundador, y que tu opinión va a definir qué alertas se construyen primero.",
+    early1Strong: "Acceso prioritario", early1Span: "Entras antes que el resto, sin filas de espera.",
+    early2Strong: "Precio de fundador", early2Span: "Una tarifa especial que se mantiene mientras sigas con nosotros.",
+    early3Strong: "Te escuchamos en serio", early3Span: "Hablamos directo contigo para construir lo que tu negocio realmente necesita.",
+    ctaEyebrow: "Acceso anticipado", ctaH2: "Sé de los primeros en probarlo",
+    ctaP: "Cuéntanos de tu negocio y te contactamos directamente para coordinar tu acceso.",
+    whatsappNote: '¿Prefieres hablar ya? <a href="https://wa.me/525658479535" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Escríbenos por WhatsApp</a>',
+    labelNombre: "Nombre", placeholderNombre: "Tu nombre",
+    labelNegocio: "Negocio o tienda", placeholderNegocio: "Nombre de tu tienda o link",
+    labelPlataforma: "Dónde vendes", optSelecciona: "Selecciona", optRedes: "Redes sociales", optOtro: "Otro",
+    labelContacto: "Email o WhatsApp",
+    submitBtn: "Quiero acceso anticipado",
+    successH3: "¡Recibido!", successP: "Te contactamos en menos de 48 horas para coordinar tu acceso anticipado.",
+    footerTag: "Vigilancia de sentimiento para negocios digitales.",
+    footerHelp: '¿Necesitas ayuda? dataeverward@gmail.com'
+  },
+  en: {
+    pageTitle: "EverWard Data — Catch Problems Before Your Customers Do",
+    navHow: "How it works", navWho: "Who it's for", navAccess: "Early access", navCta: "Request access",
+    heroEyebrow: "For online stores and digital businesses",
+    heroH1: "We catch customer problems before you even notice them.",
+    heroLead: "EverWard Data scans your reviews and comments every day, picks up on shifts in customer sentiment, and tells you exactly what's going on — and why it matters.",
+    heroCtaPrimary: "Request early access", heroCtaSecondary: "See how it works",
+    heroTrust: "Built for sellers on Shopify, Mercado Libre, and Amazon",
+    monitorTitle: "Customer sentiment · 14 days", liveBadge: "LIVE",
+    alertTop: "Sentiment dropped 32%", alertSub: "Topic: shipping delays",
+    feedTag1: "POSITIVE", feedText1: "\"Arrived so fast, everything was perfect 📦\"",
+    feedTag2: "NEGATIVE", feedText2: "\"Second time in a row it's taken longer than promised\"",
+    feedText3: "\"Good quality, but the packaging showed up damaged\"",
+    problemEyebrow: "The problem", problemH2: "Right now, you find out too late",
+    problemP: "Between selling, fulfilling orders, and answering messages, there's no time to read every review closely. And problems don't wait around.",
+    problem1H3: "You're checking everything by hand", problem1P: "Reading every review and comment one by one just isn't realistic on top of everything else you're juggling.",
+    problem2H3: "The problem builds up quietly", problem2P: "By the time you notice the dip in sales or the repeated complaints, it's already hit dozens of customers — and your reputation along with it.",
+    problem3H3: "Everything's scattered", problem3P: "Reviews on your store, comments on social media, ratings on marketplaces — and no single view of what's actually going wrong.",
+    howEyebrow: "How it works", howH2: "From review to alert, in three steps",
+    howP: "No developers, no complicated setup. Connect your channels once and EverWard Data takes it from there.",
+    step1H3: "Connect your channels", step1P: "Shopify, Mercado Libre, Amazon, or your social accounts. Takes minutes — no coding involved.",
+    step2H3: "EverWard Data reads every comment", step2P: "It sorts sentiment, flags the topic — shipping, quality, price, service — and keeps everything organized for you.",
+    step3H3: "You get alerted in time", step3P: "When something shifts in a meaningful way, you get a clear heads-up: what happened, where, and why it's worth your attention.",
+    whoEyebrow: "Is this for your business?", whoH2: "EverWard Data is for you if...",
+    check1: "You sell on Shopify, Mercado Libre, or Amazon", check2: "You get new reviews or comments every day",
+    check3: "You don't have the time — or a team — to go through them one by one", check4: "You'd rather get ahead of a problem than deal with it once it's already big",
+    earlyH2: "We're building this with the first businesses who come on board",
+    earlyP: "EverWard Data is still early-stage. That means you get priority access, a founder's rate, and a real say in which alerts we build next.",
+    early1Strong: "Priority access", early1Span: "You're in before anyone else — no waitlist.",
+    early2Strong: "Founder's rate", early2Span: "A special price that's locked in for as long as you stay with us.",
+    early3Strong: "We actually listen", early3Span: "We talk to you directly so we build what your business actually needs.",
+    ctaEyebrow: "Early access", ctaH2: "Be among the first to try it",
+    ctaP: "Tell us a bit about your business and we'll reach out to set you up.",
+    whatsappNote: 'Rather talk now? <a href="https://wa.me/525658479535" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Message us on WhatsApp</a>',
+    labelNombre: "Name", placeholderNombre: "Your name",
+    labelNegocio: "Business or store", placeholderNegocio: "Your store name or link",
+    labelPlataforma: "Where you sell", optSelecciona: "Select", optRedes: "Social media", optOtro: "Other",
+    labelContacto: "Email or WhatsApp",
+    submitBtn: "I want early access",
+    successH3: "Got it!", successP: "We'll be in touch within 48 hours to get you set up.",
+    footerTag: "Sentiment monitoring for digital businesses.",
+    footerHelp: 'Need a hand? dataeverward@gmail.com'
+  }
+};
+
+function applyLanguage(lang){
+  const dict = translations[lang] ? lang : 'es';
+  const t = translations[dict];
+  document.documentElement.lang = dict === 'en' ? 'en' : 'es-MX';
+  document.title = t.pageTitle;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(t[key] === undefined) return;
+    if(el.hasAttribute('data-i18n-html')){ el.innerHTML = t[key]; }
+    else { el.textContent = t[key]; }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(t[key] !== undefined) el.placeholder = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === dict);
+  });
+  try{ localStorage.setItem('everward-lang', dict); }catch(e){}
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>applyLanguage(btn.dataset.lang));
+});
+
+function detectInitialLang(){
+  try{
+    const saved = localStorage.getItem('everward-lang');
+    if(saved === 'es' || saved === 'en') return saved;
+  }catch(e){}
+  const nav = (navigator.language || 'es').toLowerCase();
+  return nav.startsWith('en') ? 'en' : 'es';
+}
+
+applyLanguage(detectInitialLang());
 </script>
 
 </body>
