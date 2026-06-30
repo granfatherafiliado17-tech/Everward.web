@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
 <title data-i18n="pageTitle">EverWard Data — Vigilancia de sentimiento para tu negocio</title>
-<meta name="description" content="EverWard Data vigila las reseñas y comentarios de tu tienda online todos los días, detecta cuando el sentimiento de tus clientes cambia y te avisa antes de que afecte tus ventas. Para vendedores de Shopify, Mercado Libre y Amazon.">
+<meta name="description" content="EverWard Data vigila las reseñas y comentarios de tu negocio online todos los días, detecta cuando el sentimiento de tus clientes cambia y te avisa antes de que afecte tus ventas. Para tiendas, marketplaces y páginas web.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://everward.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="EverWard Data — Vigilancia de sentimiento para tu negocio">
-<meta property="og:description" content="Detecta cuando el sentimiento de tus clientes cambia y recibe alertas antes de que afecte tus ventas. Para vendedores de Shopify, Mercado Libre y Amazon.">
+<meta property="og:description" content="Detecta cuando el sentimiento de tus clientes cambia y recibe alertas antes de que afecte tus ventas. Para tiendas online, marketplaces y páginas web.">
 <meta property="og:url" content="https://everward.netlify.app/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EverWard Data — Vigilancia de sentimiento para tu negocio">
@@ -494,9 +495,25 @@ img,svg{display:block;}
   display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
 }
 .footer-tag{font-size:0.85rem;color:var(--muted-light);}
-.footer-help{font-size:0.85rem;color:var(--teal-deep);font-weight:600;transition:color .15s ease;}
+.footer-help{
+  font-size:0.85rem;color:var(--teal-deep);font-weight:600;
+  transition:color .15s ease;
+  background:none;border:none;padding:0;
+  font-family:'Inter',sans-serif;
+}
 .footer-help:hover{color:var(--navy);}
+.footer-help.copied{color:var(--teal);}
 .footer-right{font-size:0.82rem;color:var(--muted-light);}
+.footer-legal{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-legal a{font-size:0.8rem;color:var(--muted-light);font-weight:500;transition:color .15s ease;}
+.footer-legal a:hover{color:var(--navy);}
 
 /* ---------- Reveal on scroll ---------- */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
@@ -544,7 +561,7 @@ img,svg{display:block;}
       </div>
       <div class="trust-line">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        <span data-i18n="heroTrust">Construido para vendedores de Shopify, Mercado Libre y Amazon</span>
+        <span data-i18n="heroTrust">Construido para tiendas online, marketplaces y páginas web</span>
       </div>
     </div>
 
@@ -622,7 +639,7 @@ img,svg{display:block;}
       <div class="step reveal">
         <div class="step-num">1</div>
         <h3 data-i18n="step1H3">Conecta tus canales</h3>
-        <p data-i18n="step1P">Shopify, Mercado Libre, Amazon o tus redes sociales. Toma minutos, no necesitas programar nada.</p>
+        <p data-i18n="step1P">Tu tienda online, marketplace o página web. Toma minutos, no necesitas programar nada.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">2</div>
@@ -647,7 +664,7 @@ img,svg{display:block;}
     <div class="audience-grid">
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        <span data-i18n="check1">Vendes en Shopify, Mercado Libre o Amazon</span>
+        <span data-i18n="check1">Vendes en una tienda online, marketplace o tu propia página web</span>
       </div>
       <div class="check-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
@@ -721,6 +738,7 @@ img,svg{display:block;}
                 <option>Shopify</option>
                 <option>Mercado Libre</option>
                 <option>Amazon</option>
+                <option data-i18n="optWeb">Mi propia página web</option>
                 <option data-i18n="optRedes">Redes sociales</option>
                 <option data-i18n="optOtro">Otro</option>
               </select>
@@ -752,8 +770,14 @@ img,svg{display:block;}
       EverWard Data
     </div>
     <span class="footer-tag" data-i18n="footerTag">Vigilancia de sentimiento para negocios digitales.</span>
-    <a href="mailto:dataeverward@gmail.com" class="footer-help" data-i18n="footerHelp" data-i18n-html>¿Necesitas ayuda? dataeverward@gmail.com</a>
+    <button type="button" class="footer-help" id="copyEmailBtn" data-i18n="footerHelp">¿Necesitas ayuda? dataeverward@gmail.com</button>
     <span class="footer-right">© 2026 EverWard</span>
+  </div>
+  <div class="wrap footer-legal">
+    <a href="privacidad.html">Aviso de Privacidad</a>
+    <a href="cookies.html">Política de Cookies</a>
+    <a href="aviso-legal.html">Aviso Legal</a>
+    <a href="terminos.html">Términos y Condiciones</a>
   </div>
 </footer>
 
@@ -789,7 +813,7 @@ const translations = {
     heroH1: "Te avisamos cuando algo empieza a fallar con tus clientes — antes de que tú lo notes.",
     heroLead: "EverWard lee tus reseñas y comentarios todos los días, detecta cuando el sentimiento cambia, y te dice exactamente qué está pasando y por qué.",
     heroCtaPrimary: "Solicitar acceso anticipado", heroCtaSecondary: "Ver cómo funciona",
-    heroTrust: "Construido para vendedores de Shopify, Mercado Libre y Amazon",
+    heroTrust: "Construido para tiendas online, marketplaces y páginas web",
     monitorTitle: "Sentimiento de clientes · 14 días", liveBadge: "EN VIVO",
     alertTop: "Sentimiento bajó 32%", alertSub: "Tema: tiempos de envío",
     feedTag1: "POSITIVO", feedText1: "\"Llegó rapidísimo, todo perfecto 📦\"",
@@ -802,11 +826,11 @@ const translations = {
     problem3H3: "Todo está disperso", problem3P: "Reseñas en tu tienda, comentarios en redes, calificaciones en marketplaces — sin una vista clara de qué está fallando de verdad.",
     howEyebrow: "Cómo funciona", howH2: "De reseña a alerta, en tres pasos",
     howP: "Sin desarrolladores, sin configuraciones complicadas. Conectas tus canales una vez y EverWard se queda vigilando.",
-    step1H3: "Conecta tus canales", step1P: "Shopify, Mercado Libre, Amazon o tus redes sociales. Toma minutos, no necesitas programar nada.",
+    step1H3: "Conecta tus canales", step1P: "Tu tienda online, marketplace o página web. Toma minutos, no necesitas programar nada.",
     step2H3: "EverWard analiza cada comentario", step2P: "Clasifica el sentimiento, identifica el tema — envío, calidad, precio, servicio — y lo guarda organizado.",
     step3H3: "Te llega la alerta a tiempo", step3P: "Cuando algo cambia de forma importante, recibes un aviso claro: qué pasó, dónde, y por qué te debería importar.",
     whoEyebrow: "¿Es para tu negocio?", whoH2: "EverWard es para ti si...",
-    check1: "Vendes en Shopify, Mercado Libre o Amazon", check2: "Recibes reseñas o comentarios todos los días",
+    check1: "Vendes en una tienda online, marketplace o tu propia página web", check2: "Recibes reseñas o comentarios todos los días",
     check3: "No tienes tiempo — ni equipo — para revisarlos uno por uno", check4: "Prefieres anticiparte a un problema, no reaccionar cuando ya es grande",
     earlyH2: "Estamos construyendo esto junto con los primeros negocios que se sumen",
     earlyP: "EverWard está en una etapa temprana. Eso significa acceso prioritario, un precio especial de fundador, y que tu opinión va a definir qué alertas se construyen primero.",
@@ -818,12 +842,13 @@ const translations = {
     whatsappNote: '¿Prefieres hablar ya? <a href="https://wa.me/525658479535" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Escríbenos por WhatsApp</a>',
     labelNombre: "Nombre", placeholderNombre: "Tu nombre",
     labelNegocio: "Negocio o tienda", placeholderNegocio: "Nombre de tu tienda o link",
-    labelPlataforma: "Dónde vendes", optSelecciona: "Selecciona", optRedes: "Redes sociales", optOtro: "Otro",
+    labelPlataforma: "Dónde vendes", optSelecciona: "Selecciona", optWeb: "Mi propia página web", optRedes: "Redes sociales", optOtro: "Otro",
     labelContacto: "Email o WhatsApp",
     submitBtn: "Quiero acceso anticipado",
     successH3: "¡Recibido!", successP: "Te contactamos en menos de 48 horas para coordinar tu acceso anticipado.",
     footerTag: "Vigilancia de sentimiento para negocios digitales.",
-    footerHelp: '¿Necesitas ayuda? dataeverward@gmail.com'
+    footerHelp: '¿Necesitas ayuda? dataeverward@gmail.com',
+    copiedMsg: '✓ Correo copiado'
   },
   en: {
     pageTitle: "EverWard Data — Catch Problems Before Your Customers Do",
@@ -832,7 +857,7 @@ const translations = {
     heroH1: "We catch customer problems before you even notice them.",
     heroLead: "EverWard Data scans your reviews and comments every day, picks up on shifts in customer sentiment, and tells you exactly what's going on — and why it matters.",
     heroCtaPrimary: "Request early access", heroCtaSecondary: "See how it works",
-    heroTrust: "Built for sellers on Shopify, Mercado Libre, and Amazon",
+    heroTrust: "Built for online stores, marketplaces, and websites",
     monitorTitle: "Customer sentiment · 14 days", liveBadge: "LIVE",
     alertTop: "Sentiment dropped 32%", alertSub: "Topic: shipping delays",
     feedTag1: "POSITIVE", feedText1: "\"Arrived so fast, everything was perfect 📦\"",
@@ -845,11 +870,11 @@ const translations = {
     problem3H3: "Everything's scattered", problem3P: "Reviews on your store, comments on social media, ratings on marketplaces — and no single view of what's actually going wrong.",
     howEyebrow: "How it works", howH2: "From review to alert, in three steps",
     howP: "No developers, no complicated setup. Connect your channels once and EverWard Data takes it from there.",
-    step1H3: "Connect your channels", step1P: "Shopify, Mercado Libre, Amazon, or your social accounts. Takes minutes — no coding involved.",
+    step1H3: "Connect your channels", step1P: "Your online store, marketplace, or website. Takes minutes — no coding involved.",
     step2H3: "EverWard Data reads every comment", step2P: "It sorts sentiment, flags the topic — shipping, quality, price, service — and keeps everything organized for you.",
     step3H3: "You get alerted in time", step3P: "When something shifts in a meaningful way, you get a clear heads-up: what happened, where, and why it's worth your attention.",
     whoEyebrow: "Is this for your business?", whoH2: "EverWard Data is for you if...",
-    check1: "You sell on Shopify, Mercado Libre, or Amazon", check2: "You get new reviews or comments every day",
+    check1: "You sell through an online store, marketplace, or your own website", check2: "You get new reviews or comments every day",
     check3: "You don't have the time — or a team — to go through them one by one", check4: "You'd rather get ahead of a problem than deal with it once it's already big",
     earlyH2: "We're building this with the first businesses who come on board",
     earlyP: "EverWard Data is still early-stage. That means you get priority access, a founder's rate, and a real say in which alerts we build next.",
@@ -861,12 +886,13 @@ const translations = {
     whatsappNote: 'Rather talk now? <a href="https://wa.me/525658479535" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:600;">Message us on WhatsApp</a>',
     labelNombre: "Name", placeholderNombre: "Your name",
     labelNegocio: "Business or store", placeholderNegocio: "Your store name or link",
-    labelPlataforma: "Where you sell", optSelecciona: "Select", optRedes: "Social media", optOtro: "Other",
+    labelPlataforma: "Where you sell", optSelecciona: "Select", optWeb: "My own website", optRedes: "Social media", optOtro: "Other",
     labelContacto: "Email or WhatsApp",
     submitBtn: "I want early access",
     successH3: "Got it!", successP: "We'll be in touch within 48 hours to get you set up.",
     footerTag: "Sentiment monitoring for digital businesses.",
-    footerHelp: 'Need a hand? dataeverward@gmail.com'
+    footerHelp: 'Need a hand? dataeverward@gmail.com',
+    copiedMsg: '✓ Email copied'
   }
 };
 
@@ -905,6 +931,36 @@ function detectInitialLang(){
 }
 
 applyLanguage(detectInitialLang());
+
+// ---------- Copiar correo de ayuda al portapapeles ----------
+const copyEmailBtn = document.getElementById('copyEmailBtn');
+const supportEmail = 'dataeverward@gmail.com';
+
+function getCurrentLang(){
+  return document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'es';
+}
+
+copyEmailBtn.addEventListener('click', async function(){
+  try{
+    await navigator.clipboard.writeText(supportEmail);
+  }catch(err){
+    const ta = document.createElement('textarea');
+    ta.value = supportEmail;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); }catch(e2){}
+    document.body.removeChild(ta);
+  }
+  const lang = getCurrentLang();
+  copyEmailBtn.textContent = translations[lang].copiedMsg;
+  copyEmailBtn.classList.add('copied');
+  setTimeout(()=>{
+    copyEmailBtn.textContent = translations[getCurrentLang()].footerHelp;
+    copyEmailBtn.classList.remove('copied');
+  }, 2200);
+});
 </script>
 
 </body>
